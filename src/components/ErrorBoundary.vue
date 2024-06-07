@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onErrorCaptured } from 'vue';
+import { ref, onErrorCaptured } from 'vue';
 
 const hasError = ref(false);
 const error = ref(null);
@@ -10,9 +10,8 @@ const errorCaptured = (err) => {
     return false;
 };
 
-onMounted(() => {
-    onErrorCaptured((err, instance, info) => errorCaptured(err, instance, info));
-});
+  onErrorCaptured((err, instance, info) => errorCaptured(err, instance, info));
+  
 </script>
 
 <template>
