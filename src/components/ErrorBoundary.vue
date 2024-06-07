@@ -10,8 +10,6 @@ const errorCaptured = (err) => {
     return false;
 };
 
-defineExpose({ errorCaptured })
-
 onMounted(() => {
     onErrorCaptured((err, instance, info) => errorCaptured(err, instance, info));
 });
